@@ -12,6 +12,24 @@ Este proyecto es un sistema de gestión de menús para restaurantes, desarrollad
 - **Modales de Confirmación**: Uso de modales para confirmar la eliminación de elementos.
 - **Spinners de Carga**: Indicadores de carga que se muestran durante operaciones de actualización y eliminación.
 
+## Accesos
+
+
+Tablero del Admin (dueño):
+puede crear Editores (empleados) 
+email: admin@admin.com
+pass: admin
+
+email: tester2@admin.com
+pass: admin
+
+email: tester1@admin.com
+pass: admin
+
+Tablero empleados:
+email: editor@editor.com
+pass: editor
+
 ## Requisitos
 
 - PHP >= 8.0
