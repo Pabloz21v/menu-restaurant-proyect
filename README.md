@@ -1,69 +1,70 @@
-clonar proyecto, 
-    npm install
+# Sistema de Gestión de Menús de Restaurante
+
+Este proyecto es un sistema de gestión de menús para restaurantes, desarrollado con Laravel, Vue.js, e Inertia.js. El sistema permite la administración de categorías, subcategorías, y platos, así como la creación de puntos de restauración de datos, backups automáticos, y una interfaz de usuario responsive.
+
+## Características
+
+- **Gestión de Categorías, Subcategorías y Platos**: Permite crear, editar, eliminar y visualizar categorías, subcategorías, y platos.
+- **Filtros Avanzados**: Filtrado dinámico de platos por categoría, subcategoría, y búsqueda por nombre, con soporte para búsquedas insensibles a acentos.
+- **Historial de Cambios**: Registro de todas las modificaciones realizadas en categorías, subcategorías y platos.
+- **Puntos de Restauración**: Creación de backups automáticos y manuales de las tablas de categorías, subcategorías y platos.
+- **Interfaz Responsive**: Diseño responsive que se adapta tanto a dispositivos móviles como a pantallas de escritorio.
+- **Modales de Confirmación**: Uso de modales para confirmar la eliminación de elementos.
+- **Spinners de Carga**: Indicadores de carga que se muestran durante operaciones de actualización y eliminación.
+
+## Requisitos
+
+- PHP >= 8.0
+- Composer
+- Node.js & NPM
+- MySQL o MariaDB
+
+## Instalación
+
+1. **Clonar el repositorio:**
+
+    git clone https://github.com/tu-usuario/menu-restaurant-proyect.git
+    cd nombre-repo
+
+2. **Instalar dependencias de PHP:**
+
     composer install
-crear key 
-    php artisan key:generate --ansi
-iniciar con: 
-    php artisan migrate 
-data un error de llenado de datos
-ingresar: para resetear todas las tablas con sus seeders incluido
-    php artisan migrate:fresh --seed
 
+3. **Instalar dependencias de Node.js:**
 
-php artisan serve
-npm run dev 
+    npm install
 
+4. **Configurar el archivo .env:**
 
+Copia el archivo .env.example a .env y actualiza las variables necesarias (base de datos).
 
-MEMO
-min 2:03:38 del video 3 crea una rule particular aplicable a emails que no se repitan
+    cp .env.example .env
+    php artisan key:generate
 
+5. **Migrar la base de datos:**
 
+    php artisan migrate --seed
 
-Produccion
-# Instalar dependencias con optimización
-composer install --optimize-autoloader --no-dev
+6. **Compilar los assets:**
 
-# Otros comandos necesarios para el despliegue
-Subir el Proyecto al Servidor
+    npm run dev
 
-Subir el Código del Proyecto:
-bash
-Copiar código
-cd /var/www
-git clone https://github.com/tu_usuario/tu_proyecto.git your_project
-cd your_project
+7. **Iniciar el servidor:**
 
-Instalar Dependencias de Laravel y NPM:
-bash
-Copiar código
-composer install --optimize-autoloader --no-dev
-npm install
-npm run production
+    php artisan serve
 
-Configurar Permisos:
-bash
-Copiar código
-chown -R www-data:www-data /var/www/your_project
-chmod -R 775 /var/www/your_project/storage
-chmod -R 775 /var/www/your_project/bootstrap/cache
+## Uso
 
-Configurar el Archivo .env:
-bash
-Copiar código
-cp .env.example .env
-nano .env
+**Gestión de Categorías, Subcategorías y Platos**
+Puedes agregar, editar, y eliminar categorías, subcategorías y platos desde el panel de administración.
+El filtro de platos permite buscar por nombre, y filtrar por categoría o subcategoría.
+Si se borra una categoria, borra en cascada sus subcategorias y platos
+Si borra una subcategoria, borra en cascada sus platos
 
+Puntos de Restauración
+Se crean automáticamente cada semana y puedes crear manualmente desde la vista de Backup. (configurar cron en tu servidor)
+Se puede crear puntos de restauracion manualmente
+Los puntos de restauración permiten revertir los datos de las tablas de categorías, subcategorías y platos a un estado anterior.
 
-Ajusta las configuraciones de tu entorno, incluyendo la base de datos y otras claves necesarias.
-
-Generar la Clave de la Aplicación:
-bash
-Copiar código
-php artisan key:generate
-
-
-Migrar la Base de Datos:
-bash
-Copiar código
-php artisan migrate --force
+Historial de Cambios
+El sistema mantiene un registro de todas las modificaciones realizadas en categorías, subcategorías y platos, incluyendo quién realizó el cambio y los datos antiguos y nuevos.
