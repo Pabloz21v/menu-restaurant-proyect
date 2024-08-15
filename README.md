@@ -68,3 +68,10 @@ Los puntos de restauración permiten revertir los datos de las tablas de categor
 
 Historial de Cambios
 El sistema mantiene un registro de todas las modificaciones realizadas en categorías, subcategorías y platos, incluyendo quién realizó el cambio y los datos antiguos y nuevos.
+
+Creacion de editores
+El administrador principal puede crear acceso para sus empleados (editor).
+
+Existen dos rangos para el panel de administracion
+Editor: solo accede a creacion, edicion y eliminacion de categorias, subcategorias y platos.
+Admin: lo mismo que editor, mas vista del historial, manejo de puntos de restauracion y creacion de editores.
